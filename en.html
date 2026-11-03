@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>/* 各卷存檔獨立（-sk1103）：第一次開時把舊的共用存檔 r321.v1-en 複製一份到 r321.1peter.v1-en（舊 key 保留，其他卷可能還在用），並設遷移旗標避免重複 */
+try{if(!localStorage.getItem('r321.1peter.mig1-en')){if(!localStorage.getItem('r321.1peter.v1-en')){var _o=localStorage.getItem('r321.v1-en');if(_o)localStorage.setItem('r321.1peter.v1-en',_o);}localStorage.setItem('r321.1peter.mig1-en','1');}}catch(e){}</script>
 <script>(function(){try{localStorage.setItem('r321.1peter.lang','en');}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=5">
 <meta name="theme-color" content="#1F4D3D">
@@ -4373,7 +4375,7 @@ const byCh = {}; Object.keys(BLK).forEach(c => byCh[+c] = BLK[c]);
 const cuvOf = ref => { const [c, v] = ref.split(':'); const t = D.txt[c]; return t ? (t[+v - 1] || '') : ''; };
 const blkCuv = b => { const t = D.txt[b.ch] || []; let h = '';
   for (let v = b.a; v <= b.z; v++) h += `<p><b>${v}</b>&nbsp; ${esc(t[v - 1] || '')}</p>`; return h; };
-const KEY = 'r321.v1-en';
+const KEY = 'r321.1peter.v1-en';
 const DAY = 864e5, GAPS = [0, 1, 3, 7, 16, 35, 75];
 
 let S = load();
